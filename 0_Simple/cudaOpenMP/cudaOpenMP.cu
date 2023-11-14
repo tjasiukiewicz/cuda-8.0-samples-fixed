@@ -39,6 +39,7 @@ int correctResult(int *data, const int n, const int b)
 
 int main(int argc, char *argv[])
 {
+    (void) argc; // ignored
     int num_gpus = 0;   // number of CUDA GPUs
 
     printf("%s Starting...\n\n", argv[0]);

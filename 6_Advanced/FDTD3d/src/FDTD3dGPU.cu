@@ -118,7 +118,7 @@ bool fdtdGPU(float *output, const float *input, const float *coeff, const int di
     dimBlock.x = k_blockDimX;
     // Visual Studio 2005 does not like std::min
     //    dimBlock.y = std::min<size_t>(userBlockSize / k_blockDimX, (size_t)k_blockDimMaxY);
-    dimBlock.y = ((userBlockSize / k_blockDimX) < (size_t)k_blockDimMaxY) ? (userBlockSize / k_blockDimX) : (size_t)k_blockDimMaxY;
+    dimBlock.y = ((userBlockSize / (unsigned) k_blockDimX) < (size_t)k_blockDimMaxY) ? (userBlockSize / k_blockDimX) : (size_t)k_blockDimMaxY;
     dimGrid.x  = (unsigned int)ceil((float)dimx / dimBlock.x);
     dimGrid.y  = (unsigned int)ceil((float)dimy / dimBlock.y);
     printf(" set block size to %dx%d\n", dimBlock.x, dimBlock.y);

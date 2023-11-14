@@ -32,12 +32,14 @@ int main(int argc, char **argv)
 {
 
     const size_t  n = 6, nnz = 10, vertex_numsets = 2, edge_numsets = 1;
-    int i, *destination_offsets_h, *source_indices_h;
+    int *destination_offsets_h, *source_indices_h;
+    unsigned int i = 0;
     float *weights_h, *sssp_1_h, *sssp_2_h;
     void** vertex_dim;
 
     // nvgraph variables
     nvgraphStatus_t status;
+    (void) status; // ignored
     nvgraphHandle_t handle;
     nvgraphGraphDescr_t graph;
     nvgraphCSCTopology32I_t CSC_input;

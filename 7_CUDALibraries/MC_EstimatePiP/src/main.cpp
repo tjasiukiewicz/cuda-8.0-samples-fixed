@@ -34,7 +34,7 @@
 #include "../inc/test.h"
 
 // SDK information
-static const char *printfFile = "MonteCarloEstimatePiP.txt";
+__attribute__ ((unused)) static const char *printfFile = "MonteCarloEstimatePiP.txt";
 
 // Forward declarations
 void showHelp(const int argc, const char **argv);
@@ -180,7 +180,7 @@ void runTest(int argc, const char **argv)
                     throw invalid_argument("block-size");
                 }
 
-                if (test.threadBlockSize & test.threadBlockSize-1)
+                if (test.threadBlockSize & (test.threadBlockSize-1))
                 {
                     printf("specified block size (%d) is invalid, must be a power of two (see reduction function).\n", test.threadBlockSize);
                     throw invalid_argument("block-size");

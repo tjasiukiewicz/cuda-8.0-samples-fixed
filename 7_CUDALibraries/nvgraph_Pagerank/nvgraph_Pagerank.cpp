@@ -67,12 +67,14 @@ int main(int argc, char **argv)
     const size_t  n = 6, nnz = 10, vertex_numsets = 3, edge_numsets = 1;
     const float alpha1 = 0.85, alpha2 = 0.90;
     const void *alpha1_p = (const void *) &alpha1, *alpha2_p = (const void *) &alpha2;
-    int i, *destination_offsets_h, *source_indices_h;
+    int *destination_offsets_h, *source_indices_h;
+    unsigned int i = 0;
     float *weights_h, *bookmark_h, *pr_1,*pr_2;
     void** vertex_dim;
 
     // nvgraph variables
     nvgraphStatus_t status;
+    (void) status; // ignored 
     nvgraphHandle_t handle;
     nvgraphGraphDescr_t graph;
     nvgraphCSCTopology32I_t CSC_input;

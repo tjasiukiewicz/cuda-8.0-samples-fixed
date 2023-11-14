@@ -401,6 +401,7 @@ int main (int argc, char *argv[])
     double r_inf = 0.0;
     double A_inf = 0.0;
     int errors = 0;
+    (void) errors; // ignored
 
     parseCommandLineArguments(argc, argv, opts);
 

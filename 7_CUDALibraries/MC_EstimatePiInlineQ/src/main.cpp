@@ -101,6 +101,7 @@ void runTest(int argc, const char **argv)
     using std::runtime_error;
 
     StopWatchInterface *timer = NULL;
+    (void) timer; // ignored
 
     try
     {
@@ -178,7 +179,7 @@ void runTest(int argc, const char **argv)
                     throw invalid_argument("block-size");
                 }
 
-                if (test.threadBlockSize & test.threadBlockSize-1)
+                if (test.threadBlockSize & (test.threadBlockSize-1))
                 {
                     printf("specified block size (%d) is invalid, must be a power of two (see reduction function).\n", test.threadBlockSize);
                     throw invalid_argument("block-size");

@@ -129,6 +129,7 @@ int main(int argc, char **argv)
     int k, M = 0, N = 0, nz = 0, *I = NULL, *J = NULL;
     int *d_col, *d_row;
     int qatest = 0;
+    (void) qatest; // ignored
     const float tol = 1e-12f;
     float *x, *rhs;
     float r0, r1, alpha, beta;

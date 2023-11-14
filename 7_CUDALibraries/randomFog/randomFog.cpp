@@ -40,7 +40,7 @@
 #include <helper_timer.h>
 
 // SDK information
-static const char *printfFile = "randomFog.txt";
+__attribute__ ((unused)) static const char *printfFile = "randomFog.txt";
 
 // RNG instance
 RNG *g_pRng = NULL;

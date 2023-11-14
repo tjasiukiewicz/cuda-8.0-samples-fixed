@@ -179,7 +179,7 @@ double bilateralFilterRGBA(uint *dDest,
                            StopWatchInterface *timer)
 {
     // var for kernel computation timing
-    double dKernelTime;
+    double dKernelTime = 0.0;
 
     // Bind the array to the texture
     cudaChannelFormatDesc desc = cudaCreateChannelDesc<uchar4>();

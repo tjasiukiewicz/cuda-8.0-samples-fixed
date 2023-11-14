@@ -68,7 +68,8 @@ int main(int argc, char **argv)
     const size_t  n = 5, nnz = 10, vertex_numsets = 2, edge_numsets = 1;
     const float alpha = 1.0, beta = 0.0;
     const void *alpha_p = (const void *) &alpha, *beta_p = (const void *) &beta;
-    int i, *source_offsets_h, *destination_indices_h;
+    int *source_offsets_h, *destination_indices_h;
+    unsigned int i = 0;
     float *weights_h, *x_h, *y_h;
     void** vertex_dim;
     cudaDataType_t edge_dimT = CUDA_R_32F;
@@ -76,6 +77,7 @@ int main(int argc, char **argv)
     
     // nvgraph variables
     nvgraphStatus_t status;
+    (void) status; // ignored
     nvgraphHandle_t handle;
     nvgraphGraphDescr_t graph;
     nvgraphCSRTopology32I_t CSR_input;

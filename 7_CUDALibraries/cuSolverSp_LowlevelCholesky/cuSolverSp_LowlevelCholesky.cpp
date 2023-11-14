@@ -124,6 +124,7 @@ int main (int argc, char *argv[])
     double r_inf = 0.0; // |r|
     double A_inf = 0.0; // |A|
     int errors = 0;
+    (void) errors; // ignored
 
     parseCommandLineArguments(argc, argv, opts);
 

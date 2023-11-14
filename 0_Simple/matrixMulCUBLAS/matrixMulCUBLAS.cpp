@@ -217,6 +217,9 @@ void initializeCUDA(int argc, char **argv, int &devID, int &iSizeMultiple, sMatr
 ////////////////////////////////////////////////////////////////////////////////
 int matrixMultiply(int argc, char **argv, int devID, sMatrixSize &matrix_size)
 {
+    (void) argc; // ignored
+    (void) argv; // ignored
+
     cudaDeviceProp deviceProp;
 
     checkCudaErrors(cudaGetDeviceProperties(&deviceProp, devID));

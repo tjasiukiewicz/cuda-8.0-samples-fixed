@@ -299,7 +299,10 @@ void *ThreadProc(CUDAContext *pParams)
 
         // pass in launch parameters (not actually de-referencing CUdeviceptr).  CUdeviceptr is
         // storing the value of the parameters
+        #pragma GCC diagnostic push
+        #pragma GCC diagnostic ignored "-Wstrict-aliasing"
         *((CUdeviceptr *)&argBuffer[offset]) = pParams->dptr;
+        #pragma GCC diagnostic pop
         offset += sizeof(CUdeviceptr);
 
         void *kernel_launch_config[5] =

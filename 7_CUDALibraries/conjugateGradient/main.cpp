@@ -74,6 +74,7 @@ void genTridiag(int *I, int *J, float *val, int N, int nz)
 int main(int argc, char **argv)
 {
     int M = 0, N = 0, nz = 0, *I = NULL, *J = NULL;
+    (void) M; // ignored
     float *val = NULL;
     const float tol = 1e-5f;
     const int max_iter = 10000;

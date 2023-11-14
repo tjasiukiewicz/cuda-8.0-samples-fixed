@@ -49,7 +49,7 @@ namespace npp
 
         NPP_ASSERT(eFormat != FIF_UNKNOWN);
         // check that the plugin has reading capabilities ...
-        FIBITMAP *pBitmap;
+        FIBITMAP *pBitmap = NULL;
 
         if (FreeImage_FIFSupportsReading(eFormat))
         {

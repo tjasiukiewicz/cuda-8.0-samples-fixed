@@ -40,7 +40,10 @@ T readBigEndian(const unsigned char *pData)
     {
         unsigned char p[sizeof(T)];
         reverse_copy(pData, pData+sizeof(T), p);
+	#pragma GCC diagnostic push
+	#pragma GCC diagnostic ignored "-Wstrict-aliasing"
         return *reinterpret_cast<T *>(p);
+        #pragma GCC diagnostic pop
     }
     else
     {

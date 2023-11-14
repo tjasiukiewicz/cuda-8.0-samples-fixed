@@ -120,6 +120,7 @@ CUT_THREADPROC postprocess(void *void_arg)
 
 void CUDART_CB myStreamCallback(cudaStream_t stream, cudaError_t status, void *data)
 {
+    (void) stream;
     // Check status of GPU after stream operations are done
     checkCudaErrors(status);
 
@@ -128,7 +129,7 @@ void CUDART_CB myStreamCallback(cudaStream_t stream, cudaError_t status, void *d
 }
 
 
-int main(int argc, char **argv)
+int main(void)
 {
     int N_gpus, max_gpus = 0;
     int gpuInfo[32]; // assume a maximum of 32 GPUs in a system configuration

@@ -480,7 +480,7 @@ static const char __attribute__ ((unused)) *_cudaGetErrorEnum(CUresult error)
 
 #ifdef CUBLAS_API_H_
 // cuBLAS API errors
-static const char *_cudaGetErrorEnum(cublasStatus_t error)
+__attribute__ ((unused)) static const char *_cudaGetErrorEnum(cublasStatus_t error)
 {
     switch (error)
     {
@@ -521,7 +521,7 @@ static const char *_cudaGetErrorEnum(cublasStatus_t error)
 
 #ifdef _CUFFT_H_
 // cuFFT API errors
-static const char *_cudaGetErrorEnum(cufftResult error)
+__attribute__ ((unused)) static const char *_cudaGetErrorEnum(cufftResult error)
 {
     switch (error)
     {
@@ -614,6 +614,8 @@ static const char *_cudaGetErrorEnum(cusparseStatus_t error)
 
         case CUSPARSE_STATUS_MATRIX_TYPE_NOT_SUPPORTED:
             return "CUSPARSE_STATUS_MATRIX_TYPE_NOT_SUPPORTED";
+        case CUSPARSE_STATUS_ZERO_PIVOT:
+            return "CUSPARSE_STATUS_ZERO_PIVOT";
     }
 
     return "<unknown>";
@@ -659,7 +661,7 @@ static const char *_cudaGetErrorEnum(cusolverStatus_t error)
 
 #ifdef CURAND_H_
 // cuRAND API errors
-static const char *_cudaGetErrorEnum(curandStatus_t error)
+__attribute__ ((unused)) static const char *_cudaGetErrorEnum(curandStatus_t error)
 {
     switch (error)
     {

@@ -292,6 +292,7 @@ static int TESTGEN(gemm)(const struct gemmOpts *opts,
     static T_ELEM theAlpha;
     static T_ELEM theBeta;
     static int state;
+    (void) state; // ignored
     static int m;
     static int n;
     static int k;

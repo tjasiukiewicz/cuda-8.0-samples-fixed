@@ -83,6 +83,7 @@ static void gpu_pbicgstab(cublasHandle_t cublasHandle, cusparseHandle_t cusparse
     double mone = -1.0;
     int i=0;
     int j=0;
+    (void) j; // ignored
     double ttl,ttl2,ttu,ttu2,ttm,ttm2;
     double ttt_mv=0.0;
 
@@ -239,6 +240,7 @@ int test_bicgstab(char * matrix_filename, char * coloring_filename,
     cusparseSolveAnalysisInfo_t info_l = 0;
     cusparseSolveAnalysisInfo_t info_u = 0;
     cusparseStatus_t status1, status2, status3;
+    (void) status3; // ignored
     double *devPtrAval       = 0;
     int    *devPtrAcolsIndex = 0;  
     int    *devPtrArowsIndex = 0;    
@@ -259,7 +261,9 @@ int test_bicgstab(char * matrix_filename, char * coloring_filename,
     int    *ArowsIndex =0;        
     double *Mval       =0;   
     int    *MrowsIndex =0;
+    (void) MrowsIndex; // ignored
     int    *McolsIndex =0;
+    (void) McolsIndex; // ignored
     double *x  = 0;
     double *tx = 0;
     double *f  = 0;
@@ -273,12 +277,20 @@ int test_bicgstab(char * matrix_filename, char * coloring_filename,
     int matrixM;
     int matrixN;
     int matrixSizeAval, matrixSizeAcolsIndex, matrixSizeArowsIndex, mSizeAval, mSizeAcolsIndex, mSizeArowsIndex;
+    (void) mSizeAcolsIndex; // ignored
+    (void) mSizeArowsIndex; // ignored
     int arraySizeX, arraySizeF, arraySizeR, arraySizeRW, arraySizeP,  arraySizePW, arraySizeS, arraySizeT, arraySizeV, nnz, mNNZ;
     long long flops;    
+    (void) flops; // ignored
     double start, stop;
+    (void) start; // ignored
+    (void) stop; // ignored
     int num_iterations, nbrTests, count, base, mbase;
+    (void) nbrTests; // ignored
     cusparseOperation_t trans;
+    (void) trans; // ignored
     double alpha;
+    (void) alpha;
     double ttt_sv=0.0;
 
 
@@ -443,6 +455,8 @@ int test_bicgstab(char * matrix_filename, char * coloring_filename,
 
     /* copy the csr matrix and vectors into device memory */
     double start_matrix_copy, stop_matrix_copy, start_preconditioner_copy, stop_preconditioner_copy;
+    (void) start_preconditioner_copy; // ignored
+    (void) stop_preconditioner_copy; // ignored
 
     start_matrix_copy = second();
 
