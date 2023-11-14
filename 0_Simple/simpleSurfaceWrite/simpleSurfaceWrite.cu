@@ -179,7 +179,8 @@ void runTest(int argc, char **argv)
 
     // Load image from disk
     float *hData = NULL;
-    unsigned int width, height;
+    unsigned int width = 0;
+    unsigned int height = 0;
     char *imagePath = sdkFindFilePath(imageFilename, argv[0]);
 
     if (imagePath == NULL)

@@ -461,6 +461,7 @@ void runAutoTest(int argc, char **argv, const char *filename, int kernel_param)
     printf("[%s] - (automated testing w/ readback)\n", sSDKsample);
 
     int devID = findCudaDevice(argc, (const char **)argv);
+    (void) devID; // ignored
 
     // First load the image, so we know what the size of the image (imageW and imageH)
     printf("Allocating host and CUDA memory and loading image file...\n");

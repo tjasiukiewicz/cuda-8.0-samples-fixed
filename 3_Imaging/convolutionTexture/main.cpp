@@ -131,7 +131,7 @@ int main(int argc, char **argv)
     sdkResetTimer(&hTimer);
     sdkStartTimer(&hTimer);
 
-    for (int i = 0; i < iterations; i++)
+    for (unsigned i = 0; i < iterations; i++)
     {
         convolutionColumnsGPU(
             d_Output,

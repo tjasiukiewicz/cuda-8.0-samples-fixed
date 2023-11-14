@@ -155,7 +155,7 @@ namespace __HelperGL {
         }
     }
 
-    static int areGLExtensionsSupported(const std::string &extensions)
+    static int __attribute__ ((unused)) areGLExtensionsSupported(const std::string &extensions)
     {
         std::vector<std::string> all = __Int::getGLExtensions();
 
@@ -165,7 +165,7 @@ namespace __HelperGL {
         return __Int::equals(matched, requested);
     }
 
-    static int isGLVersionSupported(unsigned reqMajor, unsigned reqMinor)
+    static int __attribute__ ((unused)) isGLVersionSupported(unsigned reqMajor, unsigned reqMinor)
     {
 #if defined(WIN32) || defined(_WIN32) || defined(WIN64) || defined(_WIN64)
         if (glewInit() != GLEW_OK)

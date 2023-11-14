@@ -117,7 +117,7 @@ void ComputeDerivatives(const float *I0, const float *I1,
     texTarget.filterMode = cudaFilterModeLinear;
     texTarget.normalized = true;
 
-    cudaChannelFormatDesc desc = cudaCreateChannelDesc<float>();
+    __attribute__ ((unused)) cudaChannelFormatDesc desc = cudaCreateChannelDesc<float>();
 
     cudaBindTexture2D(0, texSource, I0, w, h, s * sizeof(float));
     cudaBindTexture2D(0, texTarget, I1, w, h, s * sizeof(float));

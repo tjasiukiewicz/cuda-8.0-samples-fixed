@@ -21,7 +21,7 @@ typedef struct
     const char *name;
 } _sVideoFormats;
 
-static _sVideoFormats eVideoFormats[] =
+static _sVideoFormats __attribute__ ((unused)) eVideoFormats[] =
 {
     { cudaVideoCodec_MPEG1, "MPEG-1" },
     { cudaVideoCodec_MPEG2, "MPEG-2" },

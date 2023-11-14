@@ -647,7 +647,7 @@ printHelp()
 int main(int argc, char **argv)
 {
     // start logs
-    int devID;
+    __attribute__ ((unused)) int devID; // FIXME: Used ~ 683 line !!!
     char *ref_file = NULL;
     printf("%s Starting...\n\n", argv[0]);
 

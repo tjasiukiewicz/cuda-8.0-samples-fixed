@@ -50,7 +50,7 @@ __global__ void memcpy_kernel(int *dst, int *src, size_t n)
 // initialise memory
 void mem_init(int *buf, size_t n)
 {
-    for (int i = 0; i < n / sizeof(int); i++)
+    for (unsigned int i = 0; i < n / sizeof(int); i++)
     {
         buf[i] = i;
     }

@@ -292,7 +292,7 @@ static const char *_cudaGetErrorEnum(cudaError_t error)
 
 #ifdef __cuda_cuda_h__
 // CUDA Driver API errors
-static const char *_cudaGetErrorEnum(CUresult error)
+static const char __attribute__ ((unused)) *_cudaGetErrorEnum(CUresult error)
 {
     switch (error)
     {

@@ -85,12 +85,12 @@ struct Task
         checkCudaErrors(cudaDeviceSynchronize());
 
         // populate data with random elements
-        for (int i=0; i<size*size; i++)
+        for (unsigned i=0; i<size*size; i++)
         {
             data[i] = drand48();
         }
 
-        for (int i=0; i<size; i++)
+        for (unsigned i=0; i<size; i++)
         {
             result[i] = 0.;
             vector[i] = drand48();
@@ -307,7 +307,7 @@ int main(int argc, char **argv)
 #else
     omp_set_num_threads(nthreads);
     #pragma omp parallel for schedule(dynamic)
-    for (int i=0; i<TaskList.size(); i++)
+    for (unsigned i=0; i<TaskList.size(); i++)
     {
         checkCudaErrors(cudaSetDevice(dev_id));
         int tid = omp_get_thread_num();

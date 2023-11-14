@@ -386,6 +386,8 @@ runTest(int argc, char **argv)
 
         // pass in launch parameters (not actually de-referencing CUdeviceptr).  CUdeviceptr is
         // storing the value of the parameters
+        #pragma GCC diagnostic push
+        #pragma GCC diagnostic ignored "-Wstrict-aliasing"
         *((CUdeviceptr *)&argBuffer[offset]) = d_data;
         offset += sizeof(d_data);
         *((unsigned int *)&argBuffer[offset]) = width;
@@ -394,6 +396,7 @@ runTest(int argc, char **argv)
         offset += sizeof(height);
         *((float *)&argBuffer[offset]) = angle;
         offset += sizeof(angle);
+        #pragma GCC diagnostic pop
 
         void *kernel_launch_config[5] =
         {

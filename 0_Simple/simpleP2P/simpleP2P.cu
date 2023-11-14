@@ -223,7 +223,7 @@ int main(int argc, char **argv)
     // Prepare host buffer and copy to GPU 0
     printf("Preparing host buffer and memcpy to GPU%d...\n", gpuid[0]);
 
-    for (int i=0; i<buf_size / sizeof(float); i++)
+    for (unsigned i=0; i<buf_size / sizeof(float); i++)
     {
         h0[i] = float(i % 4096);
     }
@@ -259,7 +259,7 @@ int main(int argc, char **argv)
 
     int error_count = 0;
 
-    for (int i=0; i<buf_size / sizeof(float); i++)
+    for (unsigned i=0; i<buf_size / sizeof(float); i++)
     {
         // Re-generate input data and apply 2x '* 2.0f' computation of both
         // kernel runs

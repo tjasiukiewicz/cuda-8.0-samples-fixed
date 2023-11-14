@@ -415,7 +415,7 @@ double boxFilterRGBA(unsigned int *d_src, unsigned int *d_temp, unsigned int *d_
     checkCudaErrors(cudaBindTextureToArray(rgbaTex, d_array));
 
     // var for kernel computation timing
-    double dKernelTime;
+    double dKernelTime = 0.0;
 
     for (int i=0; i<iterations; i++)
     {

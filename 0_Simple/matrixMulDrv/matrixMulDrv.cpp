@@ -216,32 +216,41 @@ runTest(int argc, char **argv)
 
         // pass in launch parameters (not actually de-referencing CUdeviceptr).  CUdeviceptr is
         // storing the value of the parameters
+        #pragma GCC diagnostic push
+        #pragma GCC diagnostic ignored "-Wstrict-aliasing"
         *((CUdeviceptr *)&argBuffer[offset]) = d_C;
         offset += sizeof(d_C);
         *((CUdeviceptr *)&argBuffer[offset]) = d_A;
         offset += sizeof(d_A);
         *((CUdeviceptr *)&argBuffer[offset]) = d_B;
         offset += sizeof(d_B);
+        #pragma GCC diagnostic pop
 
         if (use_64bit_memory_address && (totalGlobalMem > (unsigned long long)4*1024*1024*1024L))
         {
             size_t Matrix_Width_A = (size_t)WA;
             size_t Matrix_Width_B = (size_t)WB;
 
+            #pragma GCC diagnostic push
+            #pragma GCC diagnostic ignored "-Wstrict-aliasing"
             *((CUdeviceptr *)&argBuffer[offset]) = Matrix_Width_A;
             offset += sizeof(Matrix_Width_A);
             *((CUdeviceptr *)&argBuffer[offset]) = Matrix_Width_B;
             offset += sizeof(Matrix_Width_B);
+            #pragma GCC diagnostic pop
         }
         else
         {
             int Matrix_Width_A = WA;
             int Matrix_Width_B = WB;
 
+            #pragma GCC diagnostic push
+            #pragma GCC diagnostic ignored "-Wstrict-aliasing"
             *((int *)&argBuffer[offset]) = Matrix_Width_A;
             offset += sizeof(Matrix_Width_A);
             *((int *)&argBuffer[offset]) = Matrix_Width_B;
             offset += sizeof(Matrix_Width_B);
+            #pragma GCC diagnostic pop
         }
 
         void *kernel_launch_config[5] =

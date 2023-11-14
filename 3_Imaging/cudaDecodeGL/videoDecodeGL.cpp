@@ -1130,6 +1130,7 @@ bool copyDecodedFrameToTexture(unsigned int &nRepeats, int bUseInterop, int *pbI
         CCtxAutoLock lck(g_CtxLock);
         // Push the current CUDA context (only if we are using CUDA decoding path)
         CUresult result = cuCtxPushCurrent(g_oContext);
+        (void) result; // ignored
 
         CUdeviceptr  pDecodedFrame[2] = { 0, 0 };
         CUdeviceptr  pInteropFrame[2] = { 0, 0 };
@@ -1149,6 +1150,7 @@ bool copyDecodedFrameToTexture(unsigned int &nRepeats, int bUseInterop, int *pbI
             oVideoProcessingParameters.unpaired_field    = (num_fields == 1);
 
             unsigned int nWidth = 0;
+            (void) nWidth; // ignored
             unsigned int nHeight = 0;
             unsigned int nDecodedPitch = 0;
 
@@ -1288,6 +1290,7 @@ cudaPostProcessFrame(CUdeviceptr *ppDecodedFrame, size_t nDecodedPitch,
 
     // Final Stage: NV12toARGB color space conversion
     CUresult eResult;
+    (void) eResult; // ignored
     eResult = cudaLaunchNV12toARGBDrv(*ppDecodedFrame, nDecodedPitch,
                                       *ppInteropFrame, pFramePitch,
                                       nWidth, nHeight, fpCudaKernel, streamID);

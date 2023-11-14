@@ -77,7 +77,7 @@ void WarpImage(const float *src, int w, int h, int s,
     texToWarp.filterMode = cudaFilterModeLinear;
     texToWarp.normalized = true;
 
-    cudaChannelFormatDesc desc = cudaCreateChannelDesc<float>();
+    __attribute__ ((unused)) cudaChannelFormatDesc desc = cudaCreateChannelDesc<float>();
 
     cudaBindTexture2D(0, texToWarp, src, w, h, s * sizeof(float));
 

@@ -163,7 +163,7 @@ static void mergeRanksAndIndices(
         const uint           i = pos & ((stride / SAMPLE_STRIDE) - 1);
         const uint segmentBase = (pos - i) * (2 * SAMPLE_STRIDE);
 
-        const uint lenA = stride;
+        __attribute__ ((unused)) const uint lenA = stride;
         const uint lenB = umin(stride, N - segmentBase - stride);
         const uint   nA = stride / SAMPLE_STRIDE;
         const uint   nB = getSampleCount(lenB);

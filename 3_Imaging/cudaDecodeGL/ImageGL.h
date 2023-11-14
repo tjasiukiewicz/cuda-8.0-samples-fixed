@@ -25,7 +25,7 @@
 #if USE_TEXTURE_RECT
 #define GL_TEXTURE_TYPE GL_TEXTURE_RECTANGLE_ARB
 // gl_shader_ for displaying floating-point texture
-static const char *gl_shader_code =
+__attribute__ ((unused)) static const char *gl_shader_code =
     "!!ARBfp1.0\n"
     "TEX result.color, fragment.texcoord, texture[0], RECT; \n"
     "END";

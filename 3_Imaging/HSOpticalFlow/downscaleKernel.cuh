@@ -73,7 +73,7 @@ void Downscale(const float *src, int width, int height, int stride,
     texFine.filterMode = cudaFilterModeLinear;
     texFine.normalized = true;
 
-    cudaChannelFormatDesc desc = cudaCreateChannelDesc<float>();
+    __attribute__ ((unused)) cudaChannelFormatDesc desc = cudaCreateChannelDesc<float>();
 
     checkCudaErrors(cudaBindTexture2D(0, texFine, src, width, height, stride * sizeof(float)));
 

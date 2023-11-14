@@ -41,6 +41,7 @@ int main(int argc, char **argv)
 
     printf("Starting up CUDA context...\n");
     int dev = findCudaDevice(argc, (const char **)argv);
+    (void) dev; // ignored
 
     uint *h_InputKey, *h_InputVal, *h_OutputKeyGPU, *h_OutputValGPU;
     uint *d_InputKey, *d_InputVal,    *d_OutputKey,    *d_OutputVal;

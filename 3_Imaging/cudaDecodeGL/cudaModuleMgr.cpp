@@ -47,6 +47,7 @@ bool modInitCTX(sCtxModule *pCtx, const char *filename, const char *exec_path, i
 
     CUresult cuStatus;
     int file_size = 0;
+    (void) file_size; // ignored
     string module_path;
     string ptx_source;
 

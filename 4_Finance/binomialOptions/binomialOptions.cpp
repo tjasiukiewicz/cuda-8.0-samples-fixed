@@ -93,7 +93,8 @@ int main(int argc, char **argv)
                 callValueCPU[MAX_OPTIONS];
 
     real
-    sumDelta, sumRef, gpuTime, errorVal;
+    sumDelta, sumRef, gpuTime;
+    real errorVal = 0.0F;
 
     StopWatchInterface *hTimer = NULL;
     int i;
@@ -187,7 +188,8 @@ int main(int argc, char **argv)
 
     if (sumRef > 1E-5)
     {
-        printf("L1 norm: %E\n", errorVal = sumDelta / sumRef);
+    	errorVal = sumDelta / sumRef;
+        printf("L1 norm: %E\n", errorVal);
     }
     else
     {

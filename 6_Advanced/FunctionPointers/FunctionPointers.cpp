@@ -473,6 +473,7 @@ void runAutoTest(int argc, char *argv[])
 {
     printf("[%s] (automated testing w/ readback)\n", sSDKsample);
     int devID = findCudaDevice(argc, (const char **)argv);
+    (void) devID; // ignored
 
     // Ensure that SM 2.0 or higher device is available before running
     checkDeviceMeetComputeSpec(argc, argv);

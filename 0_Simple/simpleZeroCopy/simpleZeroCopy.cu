@@ -54,7 +54,9 @@ int main(int argc, char **argv)
     unsigned int flags;
     size_t bytes;
     float *a, *b, *c;                      // Pinned memory allocated on the CPU
-    float *a_UA, *b_UA, *c_UA;             // Non-4K Aligned Pinned memory on the CPU
+    float *a_UA = NULL;                    // Non-4K Aligned Pinned memory on the CPU
+    float *b_UA = NULL;
+    float *c_UA = NULL;
     float *d_a, *d_b, *d_c;                // Device pointers for mapped memory
     float errorNorm, refNorm, ref, diff;
     cudaDeviceProp deviceProp;

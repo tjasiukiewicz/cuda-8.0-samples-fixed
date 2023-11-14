@@ -383,7 +383,7 @@ getLevels(unsigned int len, unsigned int *levels)
     // currently signals up to a length of 2^20 supported
     for (unsigned int i = 0; i < 20; ++i)
     {
-        if (len == (1 << i))
+        if (len == (unsigned)(1 << i))
         {
             *levels = i;
             retval = true;

@@ -493,6 +493,8 @@ int main(int argc, char **argv)
         // This is the new CUDA 4.0 API for Kernel Parameter Passing and Kernel Launch (advanced method)
         int offset = 0;
         void *argBuffer[16];
+        #pragma GCC diagnostic push
+        #pragma GCC diagnostic ignored "-Wstrict-aliasing"
         *((CUdeviceptr *)&argBuffer[offset]) = d_A;
         offset += sizeof(d_A);
         *((CUdeviceptr *)&argBuffer[offset]) = d_B;
@@ -501,6 +503,7 @@ int main(int argc, char **argv)
         offset += sizeof(d_C);
         *((int *)&argBuffer[offset]) = N;
         offset += sizeof(N);
+        #pragma GCC diagnostic pop
 
         // Grid/Block configuration
         int threadsPerBlock = 256;

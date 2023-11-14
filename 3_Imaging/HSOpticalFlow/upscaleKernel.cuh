@@ -70,7 +70,7 @@ void Upscale(const float *src, int width, int height, int stride,
     texCoarse.filterMode = cudaFilterModeLinear;
     texCoarse.normalized = true;
 
-    cudaChannelFormatDesc desc = cudaCreateChannelDesc<float>();
+    __attribute__ ((unused)) cudaChannelFormatDesc desc = cudaCreateChannelDesc<float>();
 
     cudaBindTexture2D(0, texCoarse, src, width, height, stride * sizeof(float));
 

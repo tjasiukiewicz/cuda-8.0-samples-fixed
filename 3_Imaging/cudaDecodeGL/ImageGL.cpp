@@ -102,6 +102,7 @@ void
 ImageGL::unregisterAsCudaResource(int field_num)
 {
     CUresult result = cuCtxPushCurrent(oContext_);
+    (void) result; // ignored
     checkCudaErrors(cuGLUnregisterBufferObject(gl_pbo_[field_num]));
     bIsCudaResource_ = false;
 }

@@ -627,6 +627,7 @@ int
 main(int argc, char **argv)
 {
     int devID = 0;
+    (void) devID; // ignored
     char *ref_file = NULL;
 
 #if defined(__linux__)

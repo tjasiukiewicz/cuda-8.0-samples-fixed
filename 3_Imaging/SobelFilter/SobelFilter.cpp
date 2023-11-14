@@ -365,6 +365,7 @@ void runAutoTest(int argc, char *argv[])
 {
     printf("[%s] (automated testing w/ readback)\n", sSDKsample);
     int devID = findCudaDevice(argc, (const char **)argv);
+    (void) devID; // ignored
 
     loadDefaultImage(argv[0]);
 
